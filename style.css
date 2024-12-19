@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+#messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.2rem;
+    color: #333;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fade-in 0.8s forwards;
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fade-in 0.8s forwards;
+}
+
+.button.green {
+    background-color: #2ecc71;
+}
+
+.button.red {
+    background-color: #e74c3c;
+}
+
+.button:focus {
+    outline: none;
+}
+
+button + button {
+    margin-top: 10px;
+}
+
+button.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+button:not(.disabled) {
+    cursor: pointer;
+}
+
+#confetti {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+}
+
+
